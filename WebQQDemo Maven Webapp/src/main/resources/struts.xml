@@ -3,8 +3,9 @@
 <struts>
 	<constant name="struts.objectFactory" value="spring"></constant>  
 	<package name="loginSpace" extends="struts-default">
-		<action name="login" class="com.riyun.action.LoginAction">
-
+		<action name="loginAction" method="checkLogin">
+			<result name="success"></result>
+			<result name="error"></result>
 		</action>
 	</package>
 </struts>

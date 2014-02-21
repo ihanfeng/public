@@ -1,5 +1,21 @@
 package org.masque.qq.demo.base;
 
-public class BaseDao {
+import javax.annotation.Resource;
 
+import org.hibernate.SessionFactory;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+/**
+ * 
+ * <p>Project: Masque's Base</p>
+ * <p>Description: </p>
+ * <p>Copyright (c) 2014 Masque.All Rights Reserved.</p>
+ * @author <a href="masque.java@gmail.com">Masque</a>
+ */
+public abstract class BaseDao extends HibernateDaoSupport{
+	
+	@Resource(name = "sessionFactory")
+	public void setSuperSessionFactory(SessionFactory sessionFactory) {
+		super.setSessionFactory(sessionFactory);
+	}
 }
